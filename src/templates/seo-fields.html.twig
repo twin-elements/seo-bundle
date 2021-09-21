@@ -1,0 +1,10 @@
+{% block seo_type_row %}
+    <div id="seo-type-widget">
+        <label class="h5">SEO</label>
+        <div>
+            {% for child in form.children %}
+                {{ form_row(child) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
