@@ -29,13 +29,13 @@ add in form layout
 
 Displaying meta tags on the page
 ```
-    Controller{
-        public function test(SeoMetaGenerator $seoGenerator){
+TestController extends AbstractController{
+    public function test(SeoMetaGenerator $seoGenerator){
+    
+        $seo = new Seo();
+    
+        $seoGenerator->generate($seo, $url, $imageUrl);
         
-            $seo = new Seo();
-        
-            $this->seoGenerator->generate($seo, $url, $imageUrl);
-            
-        }
     }
+}
 ```
