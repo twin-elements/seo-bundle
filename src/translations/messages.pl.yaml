@@ -1,5 +1,7 @@
 te_seo:
-  title: Meta TITLE
-  description: Meta DESCRIPTION
-  keywords: Meta KEYWORDS
-  bundle_name: SEO
+    title: Meta TITLE
+    description: Meta DESCRIPTION
+    keywords: Meta KEYWORDS
+    bundle_name: SEO
+    no_index: No index
+    no_index_help: Uwaga! Odznaczenie TAK będzie skutować brakiem indeksacji danej podstrony w indeksie Google oraz innych wyszukiwarek.

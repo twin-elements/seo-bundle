@@ -3,7 +3,6 @@
 namespace TwinElements\SeoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Table(name="seo")
@@ -22,25 +21,27 @@ class Seo
 
     /**
      * @var string
-     * @Gedmo\Translatable
      * @ORM\Column(name="title", type="string", length=128)
      */
     protected $title;
 
     /**
      * @var string
-     * @Gedmo\Translatable
      * @ORM\Column(name="description", type="string", length=270, nullable=true)
      */
     protected $description;
 
     /**
      * @var string
-     * @Gedmo\Translatable
      * @ORM\Column(name="keywords", type="string", length=255, nullable=true)
      */
     private $keywords;
 
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean")
+     */
+    private $noIndex = false;
 
     public function __toString()
     {
@@ -48,8 +49,6 @@ class Seo
     }
 
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -58,10 +57,7 @@ class Seo
     }
 
     /**
-     * Set title
-     *
      * @param string $title
-     *
      * @return Seo
      */
     public function setTitle($title)
@@ -72,8 +68,6 @@ class Seo
     }
 
     /**
-     * Get title
-     *
      * @return string
      */
     public function getTitle()
@@ -82,10 +76,7 @@ class Seo
     }
 
     /**
-     * Set description
-     *
      * @param string $description
-     *
      * @return Seo
      */
     public function setDescription($description)
@@ -96,8 +87,6 @@ class Seo
     }
 
     /**
-     * Get description
-     *
      * @return string
      */
     public function getDescription()
@@ -106,10 +95,7 @@ class Seo
     }
 
     /**
-     * Set keywords
-     *
      * @param string $keywords
-     *
      * @return Seo
      */
     public function setKeywords($keywords)
@@ -120,12 +106,26 @@ class Seo
     }
 
     /**
-     * Get keywords
-     *
      * @return string
      */
     public function getKeywords()
     {
         return $this->keywords;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isNoIndex(): bool
+    {
+        return $this->noIndex;
+    }
+
+    /**
+     * @param bool $noIndex
+     */
+    public function setNoIndex(bool $noIndex): void
+    {
+        $this->noIndex = $noIndex;
     }
 }

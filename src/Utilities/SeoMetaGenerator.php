@@ -38,6 +38,10 @@ class SeoMetaGenerator
             ->setKeywords($seo->getKeywords())
             ->setCanonical($url);
 
+        if ($seo->isNoIndex()) {
+            $basic->setRobots(false, false);
+        }
+
         /**
          * @var TwitterSeoGenerator $twitter
          */

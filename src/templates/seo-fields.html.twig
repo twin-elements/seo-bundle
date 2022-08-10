@@ -1,6 +1,6 @@
 {% block seo_type_row %}
-    <div id="seo-type-widget">
-        <label class="h5">SEO</label>
+    <div id="seo-type-widget" class="bg-light p-6 border my-7">
+        <label class="h5 mb-6">SEO</label>
         <div>
             {% for child in form.children %}
                 {{ form_row(child) }}

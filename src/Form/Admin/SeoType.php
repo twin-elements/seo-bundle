@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use TwinElements\FormExtensions\Type\ToggleChoiceType;
 use TwinElements\SeoBundle\Entity\Seo;
 
 class SeoType extends AbstractType
@@ -31,7 +32,12 @@ class SeoType extends AbstractType
                 'attr' => [
                     'rows' => 2
                 ]
-            ]);
+            ])
+            ->add('noIndex', ToggleChoiceType::class,[
+                'label' => 'No index',
+                'help' => 'te_seo.no_index_help'
+            ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
