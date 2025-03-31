@@ -35,7 +35,8 @@ class SeoType extends AbstractType
             ])
             ->add('noIndex', ToggleChoiceType::class,[
                 'label' => 'No index',
-                'help' => 'te_seo.no_index_help'
+                'help' => 'te_seo.no_index_help',
+                'empty_data' => false,
             ])
         ;
     }
